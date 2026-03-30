@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /tesekkurler
+Disallow: /is-onboarding
+Disallow: /teklif-takip
+
+Sitemap: https://harveniq.com/sitemap.xml

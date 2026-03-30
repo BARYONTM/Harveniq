@@ -1,0 +1,168 @@
+/* Shared Page Styles */
+.page { }
+
+.page-hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-primary);
+  background-size: cover;
+  background-position: center;
+  padding-top: 80px;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15,17,21,0.8);
+}
+
+.page-hero-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+}
+
+/* CNC Page Styles */
+.capabilities-section, .tech-scope-section, .quality-section, .faq-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  margin-bottom: 48px;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.capability-card {
+  padding: 40px 24px;
+}
+
+.capability-icon {
+  color: var(--accent-secondary);
+  margin-bottom: 24px;
+}
+
+.capability-card h3 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+}
+
+.tech-scope-section {
+  background-color: var(--bg-secondary);
+}
+
+.tech-scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.tech-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-elevated);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tech-table th, .tech-table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.tech-table th {
+  font-weight: 600;
+  color: var(--accent-primary);
+  width: 30%;
+}
+
+.tech-table tr:last-child th, .tech-table tr:last-child td {
+  border-bottom: none;
+}
+
+.quality-container {
+  max-width: 800px;
+}
+
+.quality-text {
+  font-size: 1.25rem;
+  margin: 24px 0;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.faq-item:hover {
+  border-color: var(--accent-secondary);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.faq-question h4 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 24px;
+  background-color: var(--bg-elevated);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* arbitrary large value */
+  padding: 0 24px 24px;
+}
+
+.faq-item.active .faq-question {
+  color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-scope-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
