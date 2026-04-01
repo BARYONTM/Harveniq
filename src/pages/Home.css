@@ -111,6 +111,18 @@
   background-color: var(--bg-secondary);
 }
 
+/* Koyu Temada: Siyah/Koyu Logoyu beyaza çevir, Beyaz arkaplanı siyaha çevir, sonra siyah arkaplanı sil (screen) */
+[data-theme="dark"] .partner-logo {
+  filter: grayscale(100%) invert(1) brightness(200%);
+  mix-blend-mode: screen;
+}
+
+/* Açık Temada: Koyu logoyu tut, Beyaz arkaplanı sil (multiply) */
+[data-theme="light"] .partner-logo {
+  filter: grayscale(100%) contrast(120%);
+  mix-blend-mode: multiply;
+}
+
 .trust-icon {
   color: var(--success);
 }
