@@ -160,18 +160,9 @@ const Home = () => {
             <p className="lead-text mt-4">{isEn ? "We collaborate with the best in the industry to deliver superior quality." : "Üstün kaliteyi sunmak için sektörün en iyileriyle omuz omuza çalışıyoruz."}</p>
           </div>
           
-          <div className="partners-display" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
-            <div className="partner-logo-wrapper" style={{ 
-              background: '#ffffff', 
-              padding: '24px 48px', 
-              borderRadius: '16px', 
-              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'transform 0.3s ease'
-            }}>
-              <img src="/vahdet.png" alt="Vahdet Makina Logo" style={{ maxHeight: '100px', width: 'auto', objectFit: 'contain' }} />
+          <div className="partners-display">
+            <div className="partner-logo-wrapper">
+              <img src="/vahdet.png" alt="Vahdet Makina Logo" className="partner-logo" />
             </div>
             {/* Future partners will be added here */}
           </div>
