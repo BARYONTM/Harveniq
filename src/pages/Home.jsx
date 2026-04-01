@@ -151,6 +151,29 @@ const Home = () => {
             <div className="industry-tag"><Users size={20}/> {isEn ? "Machine Manufacturing" : "Makine İmalat"}</div>
           </div>
         </div>
+      <section className="partners-section" style={{ padding: '80px 0', borderTop: '1px solid var(--border-color)' }}>
+        <div className="container">
+          <div className="section-header text-center mb-8">
+            <h2>{isEn ? "Our Production Partners" : "Üretim Partnerlerimiz"}</h2>
+            <p className="lead-text mt-4">{isEn ? "We collaborate with the best in the industry to deliver superior quality." : "Üstün kaliteyi sunmak için sektörün en iyileriyle omuz omuza çalışıyoruz."}</p>
+          </div>
+          
+          <div className="partners-display" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
+            <div className="partner-logo-wrapper" style={{ 
+              background: '#ffffff', 
+              padding: '24px 48px', 
+              borderRadius: '16px', 
+              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'transform 0.3s ease'
+            }}>
+              <img src="/vahdet.png" alt="Vahdet Makina Logo" style={{ maxHeight: '100px', width: 'auto', objectFit: 'contain' }} />
+            </div>
+            {/* Future partners will be added here */}
+          </div>
+        </div>
       </section>
 
       <section className="cta-strip">
