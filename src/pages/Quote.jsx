@@ -5,7 +5,7 @@ import { useLanguage } from '../components/LanguageContext';
 import './Quote.css';
 
 const Quote = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     parcaKodu: '',
