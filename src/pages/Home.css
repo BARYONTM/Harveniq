@@ -346,10 +346,11 @@
   transition: all 0.3s ease;
 }
 
-/* Koyu Temada: Siyah/Koyu Logoyu beyaza cevir, Beyaz arkaplani siyaha cevir, sonra siyah arkaplani sil (screen) */
+/* Koyu Temada: Kusurlu beyaz arkaplanlari pure white yapmak icin contrast() ekle, sonra invert(1) ile pure siyaha cevir ve screen ile yok et. */
 [data-theme="dark"] .partner-logo {
-  filter: grayscale(100%) invert(1) brightness(200%);
+  filter: grayscale(100%) contrast(500%) invert(1) brightness(1.5);
   mix-blend-mode: screen;
+  opacity: 0.85;
 }
 
 /* Acik Temada: Koyu logoyu tut, Beyaz arkaplani sil (multiply) */
