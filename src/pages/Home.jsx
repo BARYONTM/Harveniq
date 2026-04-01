@@ -151,6 +151,8 @@ const Home = () => {
             <div className="industry-tag"><Users size={20}/> {isEn ? "Machine Manufacturing" : "Makine İmalat"}</div>
           </div>
         </div>
+      </section>
+
       <section className="partners-section" style={{ padding: '80px 0', borderTop: '1px solid var(--border-color)' }}>
         <div className="container">
           <div className="section-header text-center mb-8">
