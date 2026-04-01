@@ -111,17 +111,6 @@
   background-color: var(--bg-secondary);
 }
 
-/* Koyu Temada: Siyah/Koyu Logoyu beyaza çevir, Beyaz arkaplanı siyaha çevir, sonra siyah arkaplanı sil (screen) */
-[data-theme="dark"] .partner-logo {
-  filter: grayscale(100%) invert(1) brightness(200%);
-  mix-blend-mode: screen;
-}
-
-/* Açık Temada: Koyu logoyu tut, Beyaz arkaplanı sil (multiply) */
-[data-theme="light"] .partner-logo {
-  filter: grayscale(100%) contrast(120%);
-  mix-blend-mode: multiply;
-}
 
 .trust-icon {
   color: var(--success);
@@ -314,5 +303,66 @@
   
   .hero-title {
     font-size: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   PARTNERS SECTION
+   ========================================================================== */
+
+.partners-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.partners-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.partner-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.partner-logo-wrapper:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.partner-logo {
+  max-height: 65px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Koyu Temada: Siyah/Koyu Logoyu beyaza cevir, Beyaz arkaplani siyaha cevir, sonra siyah arkaplani sil (screen) */
+[data-theme="dark"] .partner-logo {
+  filter: grayscale(100%) invert(1) brightness(200%);
+  mix-blend-mode: screen;
+}
+
+/* Acik Temada: Koyu logoyu tut, Beyaz arkaplani sil (multiply) */
+[data-theme="light"] .partner-logo {
+  filter: grayscale(100%) contrast(120%);
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+  .partners-display {
+    gap: 30px;
+  }
+  .partner-logo {
+    max-height: 50px;
   }
 }
