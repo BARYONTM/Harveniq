@@ -24,6 +24,7 @@ const Quote = () => {
   
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -154,11 +155,12 @@ const Quote = () => {
             {step === 2 && (
               <div className="wizard-step">
                 <h3 className="step-title">{t['quote.fileStep']}</h3>
-                <div className="file-upload-zone" style={{ border: '2px dashed var(--border-color)', padding: '40px', textAlign: 'center', borderRadius: '12px' }}>
-                  <Upload size={48} className="upload-icon mb-4" style={{ margin: '0 auto', color: 'var(--accent-primary)' }} />
-                  <h4>{t['quote.fileDesc']}</h4>
-                  <p className="text-secondary mb-4 mt-2">{t['quote.fileLimits']}</p>
-                </div>
+                <label className="file-upload-zone" style={{ display: 'block', cursor: 'pointer', border: '2px dashed var(--border-color)', padding: '40px', textAlign: 'center', borderRadius: '12px', background: 'var(--bg-elevated)', transition: 'all 0.3s' }}>
+                  <input type="file" style={{ display: 'none' }} onChange={(e) => setSelectedFile(e.target.files[0]?.name)} accept=".step,.stp,.dwg,.dxf,.pdf,.zip,.rar" />
+                  <Upload size={48} className="upload-icon mb-4" style={{ margin: '0 auto', color: selectedFile ? 'var(--success)' : 'var(--accent-primary)' }} />
+                  <h4 style={{ color: selectedFile ? 'var(--success)' : 'inherit' }}>{selectedFile ? selectedFile : t['quote.fileDesc']}</h4>
+                  <p className="text-secondary mb-4 mt-2">{selectedFile ? (lang === 'en' ? "File successfully added." : "Dosya başarıyla seçildi.") : t['quote.fileLimits']}</p>
+                </label>
 
                 <div className="form-group mt-8">
                   <label className="form-label">{t['quote.desc']}</label>
