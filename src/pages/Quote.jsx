@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronLeft, Upload, CheckCircle } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Upload, CheckCircle, Loader } from 'lucide-react';
 import { useLanguage } from '../components/LanguageContext';
+import emailjs from '@emailjs/browser';
+import { uploadQuoteFile } from '../services/supabase';
 import './Quote.css';
 
 const Quote = () => {
@@ -24,6 +26,7 @@ const Quote = () => {
   
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleChange = (e) => {
@@ -65,10 +68,37 @@ const Quote = () => {
     setStep(prev => prev - 1);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateStep(4)) {
-      setTimeout(() => { setIsSubmitted(true); }, 1000);
+      setIsSubmitting(true);
+      try {
+        let fileUrl = 'Dosya yüklenmedi';
+        if (selectedFile) {
+          // Önce dosyayı Supabase bulutuna yükle
+          fileUrl = await uploadQuoteFile(selectedFile);
+        }
+
+        // EmailJS'e gidecek değişkenler
+        const templateParams = {
+          ...formData,
+          file_link: fileUrl
+        };
+
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        // E-postayı fırlat
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        
+        setIsSubmitted(true);
+      } catch (err) {
+        console.error('Yükleme/Gönderim hatası:', err);
+        alert(lang === 'tr' ? 'Sunucu bağlantısında hata oluştu. Lütfen dosya boyutunu veya internetinizi kontrol edin.' : 'Connection error. Please try again.');
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -156,9 +186,9 @@ const Quote = () => {
               <div className="wizard-step">
                 <h3 className="step-title">{t['quote.fileStep']}</h3>
                 <label className="file-upload-zone" style={{ display: 'block', cursor: 'pointer', border: '2px dashed var(--border-color)', padding: '40px', textAlign: 'center', borderRadius: '12px', background: 'var(--bg-elevated)', transition: 'all 0.3s' }}>
-                  <input type="file" style={{ display: 'none' }} onChange={(e) => setSelectedFile(e.target.files[0]?.name)} accept=".step,.stp,.dwg,.dxf,.pdf,.zip,.rar" />
+                  <input type="file" style={{ display: 'none' }} onChange={(e) => setSelectedFile(e.target.files[0])} accept=".step,.stp,.dwg,.dxf,.pdf,.zip,.rar" />
                   <Upload size={48} className="upload-icon mb-4" style={{ margin: '0 auto', color: selectedFile ? 'var(--success)' : 'var(--accent-primary)' }} />
-                  <h4 style={{ color: selectedFile ? 'var(--success)' : 'inherit' }}>{selectedFile ? selectedFile : t['quote.fileDesc']}</h4>
+                  <h4 style={{ color: selectedFile ? 'var(--success)' : 'inherit' }}>{selectedFile ? selectedFile.name : t['quote.fileDesc']}</h4>
                   <p className="text-secondary mb-4 mt-2">{selectedFile ? (lang === 'en' ? "File successfully added." : "Dosya başarıyla seçildi.") : t['quote.fileLimits']}</p>
                 </label>
 
@@ -226,8 +256,16 @@ const Quote = () => {
                   {t['quote.continue']} <ChevronRight size={18} />
                 </button>
               ) : (
-                <button type="submit" className="btn btn-primary" style={{backgroundColor: 'var(--success)'}}>
-                  {t['quote.submit']} <CheckCircle size={18} />
+                <button type="submit" className="btn btn-primary" style={{backgroundColor: 'var(--success)'}} disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Loader size={18} /> {lang === 'tr' ? 'Yükleniyor ve Gönderiliyor...' : 'Sending...'}
+                    </span>
+                  ) : (
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      {t['quote.submit']} <CheckCircle size={18} />
+                    </span>
+                  )}
                 </button>
               )}
             </div>
