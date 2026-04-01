@@ -24,7 +24,7 @@ export const uploadQuoteFile = async (file) => {
       .from('quotes')
       .upload(filePath, file, {
         cacheControl: '31536000',
-        upsert: true
+        upsert: false
       });
 
     if (error) {
