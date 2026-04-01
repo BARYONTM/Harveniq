@@ -340,7 +340,7 @@
 }
 
 .partner-logo {
-  max-height: 65px;
+  max-height: 120px;
   width: auto;
   object-fit: contain;
   transition: all 0.3s ease;
@@ -363,6 +363,6 @@
     gap: 30px;
   }
   .partner-logo {
-    max-height: 50px;
+    max-height: 85px;
   }
 }
