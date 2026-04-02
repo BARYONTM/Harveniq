@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../components/LanguageContext';
+import './Contact.css';
 
 const Contact = () => {
   const { lang, t } = useLanguage();
@@ -54,7 +55,7 @@ const Contact = () => {
 
       <section style={{ padding: '100px 0' }}>
         <div className="container">
-          <div className="grid col-2 gap-8" style={{ gridTemplateColumns: '1fr 2fr' }}>
+          <div className="contact-layout-grid">
             
             <div className="contact-info">
               <h2 className="mb-8">{isEn ? "Contact Us" : "Bize Ulaşın"}</h2>
@@ -78,7 +79,7 @@ const Contact = () => {
             <div className="contact-form glass-panel" style={{ padding: '48px' }}>
               <h3 className="mb-8" style={{ fontSize: '1.5rem' }}>{isEn ? "Send a Message" : "Mesaj Gönderin"}</h3>
               <form onSubmit={handleSubmit}>
-                <div className="grid col-2 gap-4" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                <div className="contact-form-grid">
                   <div className="form-group">
                     <label className="form-label">{isEn ? "Full Name" : "Ad Soyad"}</label>
                     <input type="text" name="adSoyad" required value={formData.adSoyad} onChange={handleChange} className="form-input" />
@@ -89,7 +90,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="grid col-2 gap-4" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                <div className="contact-form-grid">
                   <div className="form-group">
                     <label className="form-label">{isEn ? "Email" : "E-posta"}</label>
                     <input type="email" name="email" required value={formData.email} onChange={handleChange} className="form-input" />
