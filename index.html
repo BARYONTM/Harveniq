@@ -11,10 +11,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- SEO and Social tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.harveniq.com/" />
+    <meta property="og:url" content="https://harveniq.com/" />
     <meta property="og:title" content="Harveniq | Yüksek Kalite CNC İşleme ve Endüstriyel Çözümler" />
     <meta property="og:description" content="Endüstriyel parça üretiminde güvenilir çözüm ortağınız. Hızlı teklif ve tam zamanında teslimat ile yüksek hassasiyetli talaşlı imalat hizmetleri." />
-    <meta property="og:image" content="https://www.harveniq.com/images/hero_bg.png" />
+    <meta property="og:image" content="https://harveniq.com/images/hero_bg.png" />
+    <!-- Dinamik Canonical (Google Cift Sayfa Kopyasi Uyarilarini Duzeltmek Icin) -->
+    <script>
+      var canonicalUrl = window.location.href.split('?')[0].replace(/\/$/, ""); 
+      var link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      link.setAttribute("href", canonicalUrl);
+      document.head.appendChild(link);
+    </script>
   </head>
   <body>
     <!-- Google Structured Data (Sitelinks ve Arama Kayıtları İçin Teknik Altyapı) -->
@@ -23,7 +31,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Harveniq",
-        "url": "https://www.harveniq.com/"
+        "url": "https://harveniq.com/"
       }
     </script>
     <div id="root"></div>
