@@ -1,0 +1,212 @@
+/* Harveniq Master Portal CSS */
+
+.portal-body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #020617; /* Slate-950 Dark Background */
+  color: #fff;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CSS Particles / Uzay Animasyonu Arkapan */
+.portal-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(77, 166, 255, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(255, 107, 0, 0.1) 0%, transparent 40%);
+}
+
+.portal-grid-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+  animation: bgPan 40s linear infinite;
+}
+
+@keyframes bgPan {
+  0% { background-position: 0 0; }
+  100% { background-position: 600px 600px; }
+}
+
+.portal-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px 60px;
+}
+
+/* Hero Tanıtım */
+.portal-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+  animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.portal-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portal-subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Çatı Karşılaştırma Kartları (Accordion / Grid) */
+.portal-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.portal-brand-card {
+  position: relative;
+  height: 480px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0 cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.portal-brand-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 0%, var(--card-color) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.portal-brand-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px var(--card-color);
+  border-color: var(--card-color);
+}
+
+.portal-brand-card:hover::after {
+  opacity: 0.15;
+}
+
+.portal-brand-content {
+  position: relative;
+  z-index: 1;
+}
+
+.portal-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--card-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 0 30px var(--card-color);
+  transition: transform 0.3s;
+}
+
+.portal-brand-card:hover .portal-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.portal-brand-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.portal-brand-desc {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  height: 80px; /* Sabit yükseklik, taşmayı engeller */
+}
+
+.portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.portal-brand-card:hover .portal-btn {
+  background: var(--card-color);
+}
+
+/* Tema Renkleri Tanımlamaları */
+.cnc-theme { --card-color: #0f4c81; }
+.sw-theme { --card-color: #4da6ff; }
+.sys-theme { --card-color: #ff6b00; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobil Tasarım */
+@media (max-width: 1024px) {
+  .portal-brands-grid { grid-template-columns: 1fr; }
+  .portal-brand-card { height: 350px; }
+  .portal-brand-desc { height: auto; }
+}
+
+@media (max-width: 768px) {
+  .portal-title { font-size: 2.8rem; }
+  .portal-content { padding-top: 60px; }
+}

@@ -96,5 +96,14 @@
   "sys.tl5": "Training & Handover",
   "sys.tl5Desc": "Providing operational usage training to your factory staff before the official project handover.",
   "sys.formTitle": "Industrial Project Consulting",
-  "sys.formSubtitle": "Share the details of your new production line implementation or facility overhaul. Our engineering team will contact you shortly for a site survey."
+  "sys.formSubtitle": "Share the details of your new production line implementation or facility overhaul. Our engineering team will contact you shortly for a site survey.",
+  "portal.heroTitle": "The Industrial Infrastructure of the Future",
+  "portal.heroSubtitle": "Harveniq provides integrated engineering solutions in production, software, and industrial facility automation. Make your selection and discover our vision.",
+  "portal.btnDiscover": "Discover",
+  "portal.cncTitle": "Harveniq CNC",
+  "portal.cncDesc": "High-tolerance precision machining and rapid series production solutions with expert engineering.",
+  "portal.swTitle": "Harveniq Software",
+  "portal.swDesc": "A modular ERP/MES infrastructure that digitizes your factory processes from quote to delivery.",
+  "portal.sysTitle": "Harveniq Systems",
+  "portal.sysDesc": "SCADA-communicative panels, PLC integrations, and turnkey factory setup automation services."
 }

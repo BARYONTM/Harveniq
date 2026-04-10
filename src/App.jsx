@@ -7,6 +7,7 @@ import Layout from './components/Layout';
 // Theme Context handled in main.jsx
 
 // Pages
+import PortalHome from './pages/PortalHome';
 import Home from './pages/Home';
 import CncMachining from './pages/CncMachining';
 import Solutions from './pages/Solutions';
@@ -38,8 +39,8 @@ function App() {
       <ScrollToTop />
       <Layout>
         <Routes>
-          {/* Umbrella Brand Landing Redirect (Geçici olarak doğrudan CNC'ye yönlendiriyor) */}
-          <Route path="/" element={<Navigate to="/cnc" replace />} />
+          {/* Umbrella Brand Master Portal (Kök Sayfa) */}
+          <Route path="/" element={<PortalHome />} />
           
           {/* Harveniq CNC */}
           <Route path="/cnc" element={<Home />} />

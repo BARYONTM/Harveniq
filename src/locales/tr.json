@@ -96,5 +96,14 @@
   "sys.tl5": "Eğitim & Teslim",
   "sys.tl5Desc": "Tesis operatörlerinize sistem güvenliğinin anlatılarak projenin eksiksiz teslimi.",
   "sys.formTitle": "Endüstriyel Proje Danışmanlığı",
-  "sys.formSubtitle": "Yeni hat kurulumu veya tesis revizyonunuz için detayları paylaşın. Mühendislik ekibimiz en kısa sürede keşif için sizinle iletişime geçsin."
+  "sys.formSubtitle": "Yeni hat kurulumu veya tesis revizyonunuz için detayları paylaşın. Mühendislik ekibimiz en kısa sürede keşif için sizinle iletişime geçsin.",
+  "portal.heroTitle": "Geleceğin Endüstriyel Altyapısı",
+  "portal.heroSubtitle": "Harveniq; üretim, yazılım ve endüstriyel tesis otomasyonunda entegre mühendislik çözümleri sunar. Seçiminizi yapıp vizyonumuzu keşfedin.",
+  "portal.btnDiscover": "Siteyi İncele",
+  "portal.cncTitle": "Harveniq CNC",
+  "portal.cncDesc": "Hassas mühendislik ile yüksek toleranslı talaşlı imalat ve hızlı seri üretim çözümleri. Türkiye'nin her yerine üretim.",
+  "portal.swTitle": "Harveniq Software",
+  "portal.swDesc": "Üretimden teslimata kadar fabrika süreçlerinizi dijitalleştiren ve maliyet analizlerini otomatikleştiren ERP/MES altyapısı.",
+  "portal.sysTitle": "Harveniq Systems",
+  "portal.sysDesc": "SCADA haberleşmeli panolar, PLC yüklemeleri ve anahtar teslim fabrika kurulum/otomasyon mühendisliği."
 }
