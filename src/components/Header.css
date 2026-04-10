@@ -52,6 +52,7 @@
   transition: color 0.2s;
   padding: 8px 0;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link::after {
