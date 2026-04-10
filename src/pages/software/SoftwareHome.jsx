@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, LayoutDashboard, Calculator, BarChart3, Cpu, Code, Database, Zap } from 'lucide-react';
+import { ChevronRight, LayoutDashboard, Calculator, BarChart3, Cpu, Code, Database, Zap, Activity, Users, Settings as SettingsIcon, CheckCircle2, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../../components/LanguageContext';
 import './SoftwareHome.css';
 
@@ -28,24 +28,102 @@ const SoftwareHome = () => {
                 <div className="sw-mockup-dot"></div>
                 <div className="sw-mockup-dot"></div>
                 <div className="sw-mockup-dot"></div>
+                <div style={{ marginLeft: 'auto', fontSize: '0.8rem', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Database size={14} /> ERP Server Bağlantısı Aktif
+                </div>
               </div>
               <div className="sw-mockup-body">
-                {/* Sol Menü (Skeleton) */}
+                {/* Sol Menü (Doldurulmuş) */}
                 <div className="sw-mockup-sidebar">
-                  <div className="sw-mockup-skeleton" style={{ width: '80%', height: '32px', marginBottom: '24px' }}></div>
-                  <div className="sw-mockup-skeleton" style={{ width: '60%' }}></div>
-                  <div className="sw-mockup-skeleton" style={{ width: '70%' }}></div>
-                  <div className="sw-mockup-skeleton" style={{ width: '50%' }}></div>
-                  <div className="sw-mockup-skeleton" style={{ width: '65%' }}></div>
-                </div>
-                {/* Ana İçerik */}
-                <div className="sw-mockup-main">
-                  <div style={{ display: 'flex', gap: '24px', marginBottom: '16px' }}>
-                    <div className="sw-mockup-skeleton" style={{ flex: 1, height: '100px', borderRadius: '12px' }}></div>
-                    <div className="sw-mockup-skeleton" style={{ flex: 1, height: '100px', borderRadius: '12px' }}></div>
-                    <div className="sw-mockup-skeleton" style={{ flex: 1, height: '100px', borderRadius: '12px' }}></div>
+                  <div style={{ color: 'var(--accent-primary)', fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '32px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Cpu size={24} /> MES.CORE
                   </div>
-                  <div className="sw-mockup-skeleton" style={{ flex: 1, width: '100%', borderRadius: '12px' }}></div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', color: '#94a3b8', fontSize: '0.9rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#ffffff', background: 'rgba(255,255,255,0.05)', padding: '8px 12px', borderRadius: '8px' }}>
+                      <LayoutDashboard size={18} /> Özet Ekranı
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '0 12px' }}>
+                      <Activity size={18} /> Makine Durumları
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '0 12px' }}>
+                      <Calculator size={18} /> Otomatik Teklifler
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '0 12px' }}>
+                      <Users size={18} /> Operatörler
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '0 12px', marginTop: 'auto' }}>
+                      <SettingsIcon size={18} /> Sistem Ayarları
+                    </div>
+                  </div>
+                </div>
+                {/* Ana İçerik (Doldurulmuş) */}
+                <div className="sw-mockup-main">
+                  
+                  {/* Başlık ve Profil alanı */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+                    <h3 style={{ fontSize: '1.2rem', margin: 0 }}>Canlı Üretim Verileri</h3>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Son Güncelleme: Şimdi</span>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.8rem' }}>M.Y</div>
+                    </div>
+                  </div>
+
+                  {/* Metrik Kartları */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '24px' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px' }}>
+                      <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '8px' }}>OEE (Genel Verimlilik)</div>
+                      <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                        %87 <span style={{ fontSize: '0.8rem', color: '#27c93f', display: 'flex', alignItems: 'center' }}><TrendingUp size={14} /> +4.2</span>
+                      </div>
+                    </div>
+                    <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px' }}>
+                      <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '8px' }}>Aktif İş Emirleri</div>
+                      <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff' }}>124</div>
+                    </div>
+                    <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px' }}>
+                      <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '8px' }}>Günlük Tahmini Maliyet</div>
+                      <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff' }}>₺42,500</div>
+                    </div>
+                  </div>
+
+                  {/* Grafik ve Tablo Simülasyonu */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '24px', flex: 1 }}>
+                    <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ fontSize: '0.9rem', color: '#94a3b8', marginBottom: '16px' }}>Haftalık Üretim Hacmi</div>
+                      <div style={{ flex: 1, display: 'flex', alignItems: 'flex-end', gap: '2%', paddingBottom: '10px' }}>
+                        {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
+                          <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 5 ? 'var(--accent-primary)' : 'rgba(77, 166, 255, 0.2)', borderRadius: '4px 4px 0 0', position: 'relative' }}></div>
+                        ))}
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#64748b', fontSize: '0.7rem', marginTop: '8px' }}>
+                        <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span>
+                      </div>
+                    </div>
+                    
+                    {/* Küçük Liste */}
+                    <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px' }}>
+                      <div style={{ fontSize: '0.9rem', color: '#94a3b8', marginBottom: '16px' }}>CNC Durumları</div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.8rrem' }}>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={14} color="#27c93f" /> DMG-Mori 5X</span>
+                          <span style={{ color: '#27c93f', fontSize: '0.75rem' }}>İşliyor</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.8rrem' }}>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={14} color="#ffbd2e" /> Mazak Torna</span>
+                          <span style={{ color: '#ffbd2e', fontSize: '0.75rem' }}>Set-up</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.8rrem' }}>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={14} color="#27c93f" /> Doosan Freze</span>
+                          <span style={{ color: '#27c93f', fontSize: '0.75rem' }}>İşliyor</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.8rrem' }}>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><CheckCircle2 size={14} color="#ff5f56" /> Lazer Kesim</span>
+                          <span style={{ color: '#ff5f56', fontSize: '0.75rem' }}>Duruş</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
             </div>
