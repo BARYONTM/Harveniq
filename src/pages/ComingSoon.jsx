@@ -49,12 +49,10 @@ const ComingSoon = ({ type }) => {
             fontSize: '3.5rem', 
             marginBottom: '16px', 
             fontWeight: 800, 
-            background: `linear-gradient(135deg, #ffffff, ${themeColor})`, 
-            WebkitBackgroundClip: 'text', 
-            WebkitTextFillColor: 'transparent', 
+            color: '#ffffff',
             letterSpacing: '-1px' 
           }}>
-            {isSoftware ? 'Harveniq Software' : 'Harveniq Systems'}
+            Harveniq <span style={{ color: themeColor }}>{isSoftware ? 'Software' : 'Systems'}</span>
           </h1>
           
           <h2 style={{ fontSize: '1.75rem', color: '#f8fafc', marginBottom: '24px', fontWeight: 500 }}>
