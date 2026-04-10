@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Phone, Mail, Moon, Sun, Globe } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 import { useLanguage } from './LanguageContext';
@@ -20,10 +20,11 @@ const Header = () => {
         
         <div className="desktop-menu">
           <nav className="header-nav">
-            <Link to="/cnc-isleme" className="nav-link">{t['header.cnc']}</Link>
-            <Link to="/endustriyel-cozumler" className="nav-link">{t['header.solutions']}</Link>
-            <Link to="/proses" className="nav-link">{t['header.process']}</Link>
-            <Link to="/iletisim" className="nav-link">{t['header.contact']}</Link>
+            <NavLink to="/cnc" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t['nav.brand.cnc']}</NavLink>
+            <NavLink to="/software" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t['nav.brand.software']}</NavLink>
+            <NavLink to="/systems" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t['nav.brand.systems']}</NavLink>
+            <NavLink to="/hakkimizda" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t['nav.about']}</NavLink>
+            <NavLink to="/iletisim" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>{t['header.contact']}</NavLink>
           </nav>
           
           <div className="header-actions">
@@ -54,10 +55,11 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <nav className="mobile-nav">
-          <Link to="/cnc-isleme" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>{t['header.cnc']}</Link>
-          <Link to="/endustriyel-cozumler" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>{t['header.solutions']}</Link>
-          <Link to="/proses" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>{t['header.process']}</Link>
-          <Link to="/iletisim" className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>{t['header.contact']}</Link>
+          <NavLink to="/cnc" className={({isActive}) => isActive ? "mobile-link active" : "mobile-link"} onClick={() => setIsMobileMenuOpen(false)}>{t['nav.brand.cnc']}</NavLink>
+          <NavLink to="/software" className={({isActive}) => isActive ? "mobile-link active" : "mobile-link"} onClick={() => setIsMobileMenuOpen(false)}>{t['nav.brand.software']}</NavLink>
+          <NavLink to="/systems" className={({isActive}) => isActive ? "mobile-link active" : "mobile-link"} onClick={() => setIsMobileMenuOpen(false)}>{t['nav.brand.systems']}</NavLink>
+          <NavLink to="/hakkimizda" className={({isActive}) => isActive ? "mobile-link active" : "mobile-link"} onClick={() => setIsMobileMenuOpen(false)}>{t['nav.about']}</NavLink>
+          <NavLink to="/iletisim" className={({isActive}) => isActive ? "mobile-link active" : "mobile-link"} onClick={() => setIsMobileMenuOpen(false)}>{t['header.contact']}</NavLink>
           
           <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
             <button onClick={() => { toggleLanguage(); setIsMobileMenuOpen(false); }} className="btn btn-secondary" style={{ flex: 1, padding: '8px' }}>

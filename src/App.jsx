@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import './index.css';
 
 // Components
@@ -17,6 +17,7 @@ import AboutUs from './pages/AboutUs';
 import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 import Legal from './pages/Legal';
+import ComingSoon from './pages/ComingSoon';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -35,8 +36,18 @@ function App() {
       <ScrollToTop />
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cnc-isleme" element={<CncMachining />} />
+          {/* Umbrella Brand Landing Redirect (Geçici olarak doğrudan CNC'ye yönlendiriyor) */}
+          <Route path="/" element={<Navigate to="/cnc" replace />} />
+          
+          {/* Harveniq CNC */}
+          <Route path="/cnc" element={<Home />} />
+          <Route path="/cnc-isleme" element={<Navigate to="/cnc" replace />} />
+          
+          {/* Çok Yakında (Software & Systems) */}
+          <Route path="/software" element={<ComingSoon type="software" />} />
+          <Route path="/systems" element={<ComingSoon type="systems" />} />
+
+          {/* Diğer Ortak ve Kök Sayfalar */}
           <Route path="/endustriyel-cozumler" element={<Solutions />} />
           <Route path="/proses" element={<Process />} />
           <Route path="/teklif-al" element={<Quote />} />

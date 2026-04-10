@@ -21,7 +21,10 @@ const Home = () => {
               <span className="hero-badge"><CheckCircle2 size={16} /> {isEn ? "On-time delivery" : "Zamanında teslimat"}</span>
             </div>
             
-            <h1 className="hero-title">{t['home.heroTitle']}</h1>
+            <h1 className="hero-title">
+              <span style={{ color: 'var(--accent-primary)', display: 'block', fontSize: '1.2rem', marginBottom: '8px', letterSpacing: '2px', textTransform: 'uppercase' }}>Harveniq CNC</span>
+              {t['home.heroTitle']}
+            </h1>
             <p className="hero-subtitle">
               {t['home.heroSubtitle']}
             </p>
@@ -30,7 +33,7 @@ const Home = () => {
               <Link to="/teklif-al" className="btn btn-primary">
                 {t['header.quote']} <ChevronRight size={18} />
               </Link>
-              <Link to="/cnc-isleme" className="btn btn-secondary">
+              <Link to="/endustriyel-cozumler" className="btn btn-secondary">
                 {isEn ? "View CNC Capabilities" : "CNC Yetkinliklerini Gör"}
               </Link>
             </div>
@@ -68,9 +71,9 @@ const Home = () => {
             <div className="service-card glass-panel">
               <div className="service-card-image cnc-bg"></div>
               <div className="service-card-content">
-                <h2>{t['header.cnc']}</h2>
+                <h2>{t['nav.brand.cnc']}</h2>
                 <p>{isEn ? "Planned processes for your turning/milling, machining, and custom part manufacturing needs." : "Torna/freze, talaşlı imalat ve özel parça üretim ihtiyaçlarınız için planlı süreç."}</p>
-                <Link to="/cnc-isleme" className="service-link">
+                <Link to="/endustriyel-cozumler" className="service-link">
                   {isEn ? "View Details" : "Detayları Gör"} <ArrowRight size={16} />
                 </Link>
               </div>
