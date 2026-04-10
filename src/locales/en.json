@@ -60,5 +60,18 @@
   "quote.successDesc": "After reviewing your request, our technical team will verify the drawings. We will contact you shortly with standard pricing and lead times.",
   "quote.successBtn": "View Process Workflow",
   "common.language": "Language",
-  "common.theme": "Theme"
+  "common.theme": "Theme",
+  "sw.heroTitle": "Digital Transformation from Production to Delivery",
+  "sw.heroSubtitle": "Digitize your production processes, reduce costs and time. Modular software solutions managing everything from quotes to delivery.",
+  "sw.btnDemo": "Request Live Demo",
+  "sw.f1Title": "Quote Automation",
+  "sw.f1Desc": "Upload drawings and get instant cost and pricing in seconds, not hours.",
+  "sw.f2Title": "Cost Calculation",
+  "sw.f2Desc": "Automatically manage raw material, labor, and overhead calculations from a single dashboard.",
+  "sw.f3Title": "Production Tracking",
+  "sw.f3Desc": "Monitor machine efficiency, work order status, and quality results in real time.",
+  "sw.f4Title": "CNC Integration",
+  "sw.f4Desc": "Send the generated code directly to the CNC machine, eliminating human errors completely.",
+  "sw.demoTitle": "Discover Our Software",
+  "sw.demoSubtitle": "Upgrade your factory to Industry 4.0 standards with Harveniq Software. Fill out the form to schedule your free demo."
 }

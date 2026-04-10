@@ -60,5 +60,18 @@
   "quote.successDesc": "Talebinizi aldıktan sonra teknik kontrol yapılacak; eksik bilgi varsa sizinle iletişime geçeceğiz.",
   "quote.successBtn": "Teklif Sürecini Gör",
   "common.language": "Dil",
-  "common.theme": "Tema"
+  "common.theme": "Tema",
+  "sw.heroTitle": "Üretimden Teslime Dijital Dönüşüm",
+  "sw.heroSubtitle": "Üretim süreçlerinizi dijitalleştirin, maliyeti ve süreyi düşürün. Tekliften teslimata tüm üretimi yöneten modüler yazılım çözümleri.",
+  "sw.btnDemo": "Canlı Demo Talep Et",
+  "sw.f1Title": "Teklif Otomasyonu",
+  "sw.f1Desc": "Çizim yükleyin, saatler değil saniyeler içinde anında maliyet ve fiyat alın.",
+  "sw.f2Title": "Maliyet Hesaplama",
+  "sw.f2Desc": "Hammadde, işçilik ve genel gider hesaplamanızı tek ekrandan otomatik yönetin.",
+  "sw.f3Title": "Üretim Takip Sistemi",
+  "sw.f3Desc": "Makine verimliliği, iş emri durumu ve kalite sonuçlarını gerçek zamanlı izleyin.",
+  "sw.f4Title": "CNC Entegrasyonu",
+  "sw.f4Desc": "Üretilen kodu direkt CNC tezgahına gönderin, insan hatalarını tamamen ortadan kaldırın.",
+  "sw.demoTitle": "Yazılımımızı Keşfedin",
+  "sw.demoSubtitle": "Harveniq Software ile fabrikanızı Endüstri 4.0 standarlandına taşıyın. Formu doldurun, ücretsiz demomuzu planlayalım."
 }

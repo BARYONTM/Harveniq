@@ -18,6 +18,7 @@ import Projects from './pages/Projects';
 import Blog from './pages/Blog';
 import Legal from './pages/Legal';
 import ComingSoon from './pages/ComingSoon';
+import SoftwareHome from './pages/software/SoftwareHome';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -43,8 +44,10 @@ function App() {
           <Route path="/cnc" element={<Home />} />
           <Route path="/cnc-isleme" element={<Navigate to="/cnc" replace />} />
           
-          {/* Çok Yakında (Software & Systems) */}
-          <Route path="/software" element={<ComingSoon type="software" />} />
+          {/* Software Modülü */}
+          <Route path="/software" element={<SoftwareHome />} />
+          
+          {/* Çok Yakında (Systems) */}
           <Route path="/systems" element={<ComingSoon type="systems" />} />
 
           {/* Diğer Ortak ve Kök Sayfalar */}
