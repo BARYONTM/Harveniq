@@ -1,0 +1,247 @@
+/* Harveniq Systems Özel Stilleri (Ağır Sanayi/Endüstriyel Konsept) */
+
+.systems-page {
+  --sys-accent: #ff6b00; /* Turuncu Endüstriyel Aksan */
+  --sys-dark: #0f172a;
+}
+
+/* Systems Hero Bölümü */
+.systems-hero {
+  position: relative;
+  padding: 120px 0 100px;
+  background: var(--bg-default);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.systems-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  z-index: 0;
+}
+
+.systems-hero-glow {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.systems-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sys-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.sys-hero-title span {
+  color: var(--sys-accent);
+}
+
+.sys-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Hizmet Kartları */
+.sys-services {
+  padding: 80px 0;
+  background: var(--bg-elevated);
+}
+
+.sys-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.sys-service-card {
+  position: relative;
+  padding: 40px 32px;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sys-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--sys-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.sys-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.sys-service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.sys-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: rgba(255, 107, 0, 0.1);
+  color: var(--sys-accent);
+  margin-bottom: 24px;
+}
+
+.sys-service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.sys-service-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Timeline (Süreç Çizelgesi) */
+.sys-process {
+  padding: 100px 0;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 64px auto 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  padding-right: 48px;
+  margin-bottom: 48px;
+}
+
+.timeline-item:nth-child(even) {
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: calc(50% + 48px);
+  padding-right: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  right: -24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-default);
+  border: 4px solid var(--sys-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+  left: calc(50% - 24px);
+  right: auto;
+}
+
+.timeline-content {
+  background: var(--glass-bg);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  text-align: right;
+  width: 100%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+}
+
+.timeline-content h4 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: var(--sys-accent);
+}
+
+/* Proje Formu */
+.sys-cta-section {
+  padding: 80px 0;
+  background: var(--sys-dark);
+  color: #fff;
+  border-top: 4px solid var(--sys-accent);
+}
+
+.sys-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .sys-form-grid { grid-template-columns: 1fr; }
+  .timeline::before { left: 24px; }
+  .timeline-item { width: 100%; padding-left: 72px !important; padding-right: 0; justify-content: flex-start; }
+  .timeline-marker { left: 0 !important; right: auto; width: 40px; height: 40px; border-width: 3px; font-size: 1rem; }
+  .timeline-content { text-align: left; }
+}
+
+@media (max-width: 768px) {
+  .sys-hero-title { font-size: 2.5rem; }
+}

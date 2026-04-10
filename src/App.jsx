@@ -19,6 +19,7 @@ import Blog from './pages/Blog';
 import Legal from './pages/Legal';
 import ComingSoon from './pages/ComingSoon';
 import SoftwareHome from './pages/software/SoftwareHome';
+import SystemsHome from './pages/systems/SystemsHome';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -47,8 +48,8 @@ function App() {
           {/* Software Modülü */}
           <Route path="/software" element={<SoftwareHome />} />
           
-          {/* Çok Yakında (Systems) */}
-          <Route path="/systems" element={<ComingSoon type="systems" />} />
+          {/* Systems Modülü */}
+          <Route path="/systems" element={<SystemsHome />} />
 
           {/* Diğer Ortak ve Kök Sayfalar */}
           <Route path="/endustriyel-cozumler" element={<Solutions />} />
