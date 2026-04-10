@@ -9,7 +9,7 @@ const SystemsHome = () => {
   return (
     <div className="systems-page">
       {/* Hero Section */}
-      <section className="systems-hero">
+      <section className="systems-hero" style={{ backgroundImage: "linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.7)), url('/images/sys_bg.png')", backgroundSize: "cover", backgroundPosition: "center", borderBottom: '1px solid rgba(255,107,0,0.3)' }}>
         <div className="systems-hero-glow"></div>
         <div className="container">
           <div className="systems-hero-content">
@@ -62,6 +62,27 @@ const SystemsHome = () => {
               </div>
               <h3>{t['sys.f4Title']}</h3>
               <p>{t['sys.f4Desc']}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proje Galeri / Görseller (YENİ EKLENDİ) */}
+      <section style={{ padding: '80px 0', background: 'var(--bg-default)' }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '16px' }}>Saha Çözümlerimiz</h2>
+            <p style={{ color: 'var(--text-secondary)' }}>Mühendislik kalitemizi yansıtan yüksek teknolojili endüstriyel tesisler ve pano altyapıları.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            <div style={{ height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <img src="/images/sys_factory.png" alt="Otomotiv Üretim Hattı" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
+            </div>
+            <div style={{ height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <img src="/images/sys_panel.png" alt="SCADA Kontrol Panosu" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
+            </div>
+            <div style={{ height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <img src="/images/sys_bg.png" alt="Endüstriyel Robotik Kol" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
             </div>
           </div>
         </div>

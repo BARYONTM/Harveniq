@@ -22,7 +22,7 @@ const PortalHome = () => {
 
         <div className="portal-brands-grid">
           {/* HARVENIQ CNC KARTI */}
-          <Link to="/cnc" className="portal-brand-card cnc-theme">
+          <Link to="/cnc" className="portal-brand-card cnc-theme" style={{ backgroundImage: "linear-gradient(to top, rgba(2,6,23,1) 0%, rgba(2,6,23,0.3) 100%), url('/images/cnc_bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
             <div className="portal-brand-content">
               <div className="portal-icon-wrapper">
                 <Settings size={32} />
@@ -36,7 +36,7 @@ const PortalHome = () => {
           </Link>
 
           {/* HARVENIQ SOFTWARE KARTI */}
-          <Link to="/software" className="portal-brand-card sw-theme">
+          <Link to="/software" className="portal-brand-card sw-theme" style={{ backgroundImage: "linear-gradient(to top, rgba(2,6,23,1) 0%, rgba(2,6,23,0.3) 100%), url('/images/sw_bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
             <div className="portal-brand-content">
               <div className="portal-icon-wrapper">
                 <Cpu size={32} />
@@ -50,7 +50,7 @@ const PortalHome = () => {
           </Link>
 
           {/* HARVENIQ SYSTEMS KARTI */}
-          <Link to="/systems" className="portal-brand-card sys-theme">
+          <Link to="/systems" className="portal-brand-card sys-theme" style={{ backgroundImage: "linear-gradient(to top, rgba(2,6,23,1) 0%, rgba(2,6,23,0.3) 100%), url('/images/sys_bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
             <div className="portal-brand-content">
               <div className="portal-icon-wrapper">
                 <HardHat size={32} />
